@@ -1,14 +1,25 @@
 @import "tailwindcss";
 
-:root {
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Newsreader", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-sand-50: #faf9f6;
+  --color-sand-100: #f3f1ec;
+  --color-sand-200: #e6e2d8;
+  --color-sand-300: #d5cfc0;
+  --color-sand-400: #b8b09f;
+  --color-sand-500: #9b917e;
+  --color-sand-600: #7a7261;
+  --color-sand-700: #5c5648;
+  --color-sand-800: #423e34;
+  --color-sand-900: #292721;
+
+  --color-brown: #6f5c50;
 }
 
-@theme inline {
-}
-
-@media (prefers-color-scheme: dark) {
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* setup fonts: have newsreader and inter */
+/* newsreader is for headings */
+/* inter is for body text */
+/* JetBrains Mono is for code */
