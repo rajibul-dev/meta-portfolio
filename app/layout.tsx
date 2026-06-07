@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "./provider";
+import Navbar from "./_components/navbar";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -34,8 +35,9 @@ export default function RootLayout({
       className={`${newsreader.variable} ${inter.variable} ${jetbrains_mono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="bg-sand-50 text-sand-900">
-        <Provider>{children}</Provider>
+      <body className="bg-sand-50 text-sand-900 grid grid-rows-[auto_1fr] [grid-template-area:'header'_'main'_'footer'] min-h-screen">
+        <Navbar />
+        {children}
       </body>
     </html>
   );
