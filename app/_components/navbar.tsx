@@ -26,8 +26,8 @@ export default function Navbar() {
   }
 
   return (
-    <header className="border-b h-17 border-sand-200">
-      <div className="container h-full mx-auto flex items-center justify-between">
+    <header className="fixed top-0 w-full z-50 border-b h-(--header-height) border-sand-200">
+      <div className="container px-4 h-full mx-auto flex items-center justify-between">
         {/* logo basically */}
         <Wordmark />
 
@@ -42,7 +42,7 @@ export default function Navbar() {
                     isActiveLink(link.href)
                       ? "text-amber-700"
                       : "text-sand-500 hover:text-sand-700",
-                    `text-sm h-full flex items-center tracking-wide uppercase font-semibold transition-colors`,
+                    `h-full flex items-center tracking-wide uppercase font-semibold transition-colors`,
                   )}
                 >
                   {link.name}

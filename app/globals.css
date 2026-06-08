@@ -21,6 +21,8 @@
   --color-sand-900: #292721;
 
   --color-brown: #6f5c50;
+
+  --header-height: 68px; /* in tailwind units, 4 is the scale factor */
 }
 
 /* setup fonts: have newsreader and inter */
@@ -150,4 +152,8 @@
   html {
     @apply font-sans;
   }
+}
+
+button {
+  cursor: pointer;
 }
