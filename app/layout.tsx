@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Provider from "./provider";
+// import Provider from "./provider";
 import Navbar from "./_components/navbar";
 
 const newsreader = Newsreader({
