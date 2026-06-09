@@ -23,6 +23,11 @@
   --color-brown: #6f5c50;
 
   --header-height: 68px; /* in tailwind units, 4 is the scale factor */
+
+  --breakpoint-md3: 936px;
+  --breakpoint-md2: 830px;
+  --breakpoint-xs3: 467px;
+  --breakpoint-xs2: 390px;
 }
 
 /* setup fonts: have newsreader and inter */
@@ -164,9 +169,9 @@ button {
 }
 
 .primary-container {
-  @apply max-w-7xl mx-auto px-4;
+  @apply mx-auto px-4 max-w-7xl;
 }
 
 .wide-container {
-  @apply max-w-full mx-auto px-4;
+  @apply mx-auto px-4 max-w-full;
 }

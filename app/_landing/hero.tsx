@@ -2,22 +2,18 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
-const smallerHeroHeadingStyles = true;
-
 export default function Hero() {
-  const noArtHeroTextWidthReduceStyles = clsx(
-    smallerHeroHeadingStyles ? "max-w-[58ch]" : "max-w-[75ch]",
+  const heroButtonCommonStyles = clsx(
+    `px-10 max-[845px]:px-5 max-md3:px-6 py-3 rounded-sm max-md3:text-base text-lg transition-colors`,
   );
-  const heroButtonCommonStyles = `px-10 py-3 text-lg transition-colors rounded-sm`;
 
   return (
-    <section className="items-center gap-16 grid grid-cols-[1.3fr_0.9fr]">
+    <section className="max-md2:justify-items-center items-center gap-16 grid grid-cols-[1.3fr_0.9fr] max-md2:grid-cols-1">
       {/* Hero content portion */}
-      <div className={noArtHeroTextWidthReduceStyles}>
+      <div className={`max-w-[58ch] max-md2:max-w-[46ch] max-md2:text-center`}>
         <h1
           className={clsx(
-            "mb-4 font-serif font-normal text-sand-900 text-5xl leading-[1.2]",
-            smallerHeroHeadingStyles ? "text-5xl" : "text-6xl",
+            `mb-4 font-serif font-normal text-sand-900 max-xs3:text-3xl max-md3:text-4xl text-5xl leading-[1.2] max-xs3:leading-[1.3]`,
           )}
         >
           <span>Hi, I'm Rajibul Islam.</span>
@@ -27,7 +23,9 @@ export default function Hero() {
             Interesting Things.
           </span>
         </h1>
-        <p className="mb-8 max-w-[60ch] text-sand-700 text-lg leading-[1.7] hero-copy">
+        <p
+          className={`mb-8 max-w-[60ch] text-sand-700 max-md3:text-base text-lg leading-[1.7] hero-copy max-xs3:leading-[1.6]`}
+        >
           I use this space to share projects, document what I'm learning, and
           tell the stories behind the things I build. From software engineering
           and design to singing and creative exploration, this site is a record
@@ -35,7 +33,7 @@ export default function Hero() {
         </p>
 
         {/* hero buttons */}
-        <div className="flex gap-4">
+        <div className="flex max-md2:justify-center gap-4">
           <Link
             href="/writing"
             className={`bg-brown text-sand-100 hover:bg-amber-700 ${heroButtonCommonStyles}`}
@@ -59,8 +57,7 @@ export default function Hero() {
           width={1000}
           height={1250}
           priority
-          sizes="(max-width: 1024px) 100vw, 40vw"
-          className="rounded-sm max-w-100 h-auto object-cover"
+          className="rounded-sm max-md2:w-full max-w-100 h-auto object-cover"
         />
       </div>
     </section>

@@ -26,7 +26,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50 border-b h-(--header-height) border-sand-200">
+    <header className="fixed top-0 w-full z-50 border-b h-(--header-height) border-sand-200 bg-sand-50/70 backdrop-blur-sm">
       <div className="flex justify-between items-center mx-auto px-4 h-full primary-container">
         {/* logo basically */}
         <Wordmark />
