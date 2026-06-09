@@ -157,3 +157,16 @@
 button {
   cursor: pointer;
 }
+
+@utility hero-copy {
+  letter-spacing: -0.2pt;
+  word-spacing: 1.2pt;
+}
+
+.primary-container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+.wide-container {
+  @apply max-w-full mx-auto px-4;
+}

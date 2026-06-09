@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className="bg-sand-50 text-sand-900 grid grid-rows-[auto_1fr] [grid-template-area:'header'_'main'_'footer'] min-h-screen">
         <Navbar />
         <div className="mt-(--header-height)">
-          <div className="container mx-auto px-4 pb-8 pt-12">{children}</div>
+          <div className="primary-container pb-8 pt-12">{children}</div>
         </div>
       </body>
     </html>

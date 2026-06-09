@@ -1,19 +1,22 @@
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 
 const smallerHeroHeadingStyles = true;
 
 export default function Hero() {
-  const noArtHeroTextWidthReduceStyles = `max-w-[${smallerHeroHeadingStyles ? "58ch" : "75ch"}]`;
+  const noArtHeroTextWidthReduceStyles = clsx(
+    smallerHeroHeadingStyles ? "max-w-[58ch]" : "max-w-[75ch]",
+  );
   const heroButtonCommonStyles = `px-10 py-3 text-lg transition-colors rounded-sm`;
 
   return (
-    <section>
+    <section className="items-center gap-16 grid grid-cols-[1.3fr_0.9fr]">
       {/* Hero content portion */}
       <div className={noArtHeroTextWidthReduceStyles}>
         <h1
           className={clsx(
-            "text-sand-900 font-normal font-serif text-5xl leading-[1.2] mb-4",
+            "mb-4 font-serif font-normal text-sand-900 text-5xl leading-[1.2]",
             smallerHeroHeadingStyles ? "text-5xl" : "text-6xl",
           )}
         >
@@ -24,7 +27,7 @@ export default function Hero() {
             Interesting Things.
           </span>
         </h1>
-        <p className="text-lg leading-[1.7] mb-8 text-sand-700">
+        <p className="mb-8 max-w-[60ch] text-sand-700 text-lg leading-[1.7] hero-copy">
           I use this space to share projects, document what I'm learning, and
           tell the stories behind the things I build. From software engineering
           and design to singing and creative exploration, this site is a record
@@ -49,6 +52,17 @@ export default function Hero() {
       </div>
 
       {/* any art portion or picture goes here */}
+      <div>
+        <Image
+          src="/images/rajibul-islam.jpg"
+          alt="Rajibul Islam"
+          width={1000}
+          height={1250}
+          priority
+          sizes="(max-width: 1024px) 100vw, 40vw"
+          className="rounded-sm max-w-100 h-auto object-cover"
+        />
+      </div>
     </section>
   );
 }
