@@ -8,7 +8,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="max-md2:justify-items-center items-center gap-16 grid grid-cols-[1.3fr_0.9fr] max-md2:grid-cols-1">
+    <section className="max-md2:justify-items-center items-center gap-16 grid grid-cols-[1.3fr_0.9fr] max-md2:grid-cols-1 pt-12 pb-12 primary-container">
       {/* Hero content portion */}
       <div className={`max-w-[58ch] max-md2:max-w-[46ch] max-md2:text-center`}>
         <h1

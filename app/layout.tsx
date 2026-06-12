@@ -35,10 +35,10 @@ export default function RootLayout({
       className={`${newsreader.variable} ${inter.variable} ${jetbrains_mono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="bg-sand-50 text-sand-900 grid grid-rows-[auto_1fr] [grid-template-area:'header'_'main'_'footer'] min-h-screen">
+      <body className="grid grid-rows-[auto_1fr] bg-sand-50 selection:bg-sand-200 min-h-screen text-sand-900 [grid-template-area:'header'_'main'_'footer']">
         <Navbar />
         <div className="mt-(--header-height)">
-          <div className="primary-container pb-8 pt-12">{children}</div>
+          <div className="">{children}</div>
         </div>
       </body>
     </html>
