@@ -12,7 +12,7 @@ const currentFocusData = {
 
 export default function CurrentFocus() {
   return (
-    <section className="bg-sand-100 mx-auto my-4 p-10 max-sm:p-8 max-sm:py-14 border border-sand-200 rounded-lg max-w-4xl">
+    <section className="bg-sand-100 mx-auto my-12 p-10 max-sm:p-8 max-sm:py-14 border border-sand-200 rounded-lg max-w-4xl">
       <h2 className="mb-10 font-serif text-sand-900 text-2xl">Current Focus</h2>
 
       <div className="flex max-sm:flex-col gap-12">

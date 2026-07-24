@@ -168,6 +168,10 @@ button {
   word-spacing: 1.2pt;
 }
 
+.narrow-container {
+  @apply mx-auto px-4 max-w-5xl!;
+}
+
 .primary-container {
   @apply mx-auto px-4 max-w-7xl;
 }
