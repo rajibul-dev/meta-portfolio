@@ -15,7 +15,7 @@ const featuredWork = [
 
 export default function FeaturedWork() {
   return (
-    <section className="py-20 narrow-container">
+    <section className="py-20 max-sm:py-16 narrow-container">
       <SectionHeading>
         <SectionHeading.Heading>Featured Work</SectionHeading.Heading>
       </SectionHeading>
