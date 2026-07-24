@@ -18,7 +18,7 @@ export default function Button({
   className?: string;
 }) {
   const buttonStyles = clsx(
-    `inline-flex box-border shadow-xs border border-transparent rounded-base focus:outline-none focus:ring-4 font-medium leading-5 transition-colors`,
+    `inline-flex box-border items-center gap-1 shadow-xs border border-transparent rounded-base focus:outline-none focus:ring-4 font-medium leading-5 transition-colors`,
     variant === "primary" && `bg-brown text-sand-100 hover:bg-amber-700`,
     variant === "secondary" &&
       `ring ring-inset ring-sand-200 bg-sand-100 text-sand-900 hover:bg-sand-200`,
@@ -27,11 +27,12 @@ export default function Button({
     variant === "ghost" &&
       `bg-transparent hover:bg-sand-100 focus:ring-sand-300 text-sand-900`,
     variant === "link" &&
-      `bg-transparent hover:bg-sand-100 focus:ring-sand-300 text-brand`,
+      `text-sand-900 hover:text-amber-700 text-sm decoration-sand-300 hover:decoration-amber-700/50 underline underline-offset-4 shadow-none! `,
     variant === "danger" &&
       `bg-red-600 hover:bg-red-700 focus:ring-red-500 text-white`,
     size === "small" && `px-3 py-1.5 text-sm rounded-sm`,
-    size === "medium" && `px-6 py-3 text-base rounded-sm`,
+    size === "medium" &&
+      `${variant === "link" ? "py-0 px-0" : "px-6 py-3"} text-base rounded-sm`,
     size === "large" && `px-8 py-4 text-lg rounded-sm`,
   );
 

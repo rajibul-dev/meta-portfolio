@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SectionHeading from "../_components/ui/section-heading";
 import Button from "../_components/ui/button";
+import QuoteAttention from "../_components/ui/quote-attention";
 
 const featuredWork = [
   { title: "Voccaria", category: "Case Study", href: "/projects" },
@@ -36,9 +37,16 @@ export default function FeaturedWork() {
         ))}
       </div>
       <Button href="/projects">Explore All Projects &rarr;</Button>
-      {/* <button className="bg-brown hover:bg-amber-700 px-10 py-3 rounded-sm font-medium text-sand-100 text-lg transition-colors">
-        Explore All Projects
-      </button> */}
+
+      {/* Lab Signal */}
+      <QuoteAttention>
+        <p className="mb-1 text-sand-600 text-sm max-xs2:leading-relaxed">
+          Looking for raw experiments and unpolished ideas?
+        </p>
+        <Button variant="link" href="/lab">
+          Peek into the lab &rarr;
+        </Button>
+      </QuoteAttention>
     </section>
   );
 }
