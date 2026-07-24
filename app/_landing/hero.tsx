@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   const heroButtonCommonStyles = clsx(
-    `px-10 max-[845px]:px-5 max-md3:px-6 py-3 rounded-sm max-md3:text-base text-lg transition-colors`,
+    `px-10 max-[845px]:px-5 max-md3:px-6 py-3 rounded-sm font-medium max-md3:text-base text-lg transition-colors`,
   );
 
   return (

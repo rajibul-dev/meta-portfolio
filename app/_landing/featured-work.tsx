@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "../_components/ui/section-heading";
+import Button from "../_components/ui/button";
 
 const featuredWork = [
   { title: "Voccaria", category: "Case Study", href: "/projects" },
@@ -24,7 +25,7 @@ export default function FeaturedWork() {
         exploratory frontend interfaces.
       </p>
 
-      <div className="flex flex-col gap-3 mb-8">
+      <div className="flex flex-col gap-3 mb-9">
         {featuredWork.map((work) => (
           <WorkListItem
             title={work.title}
@@ -34,6 +35,10 @@ export default function FeaturedWork() {
           />
         ))}
       </div>
+      <Button href="/projects">Explore All Projects &rarr;</Button>
+      {/* <button className="bg-brown hover:bg-amber-700 px-10 py-3 rounded-sm font-medium text-sand-100 text-lg transition-colors">
+        Explore All Projects
+      </button> */}
     </section>
   );
 }
