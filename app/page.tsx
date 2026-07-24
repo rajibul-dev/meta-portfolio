@@ -1,3 +1,4 @@
+import CurrentFocus from "./_landing/current-focus";
 import FeaturedWork from "./_landing/featured-work";
 import Hero from "./_landing/hero";
 import RecentWriting from "./_landing/recent-writing";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <FeaturedWork />
       <RecentWriting />
+      <CurrentFocus />
     </main>
   );
 }
