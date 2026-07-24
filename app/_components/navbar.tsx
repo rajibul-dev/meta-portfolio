@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
+import { ScnButton } from "./ui/scn-button";
 import Wordmark from "./wordmark";
 
 const NAV_LINKS = [
@@ -53,7 +53,7 @@ export default function Navbar() {
         </nav>
 
         {/* navigation cta button */}
-        <Button
+        <ScnButton
           asChild
           size={"lg"}
           className="bg-brown hover:bg-amber-700 px-5 text-sand-100 cursor-pointer"
@@ -62,7 +62,7 @@ export default function Navbar() {
             <Mail />
             Contact
           </Link>
-        </Button>
+        </ScnButton>
       </div>
     </header>
   );
