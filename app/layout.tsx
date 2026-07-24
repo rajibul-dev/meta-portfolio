@@ -3,6 +3,7 @@ import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 // import Provider from "./provider";
 import Navbar from "./_components/navbar";
+import Footer from "./_components/footer";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -41,7 +42,10 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="mt-(--header-height)">
-          <div className="">{children}</div>
+          <div className="">
+            {children}
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
