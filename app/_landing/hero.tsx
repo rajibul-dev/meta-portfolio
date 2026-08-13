@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="max-md2:justify-items-center items-center gap-16 grid grid-cols-[1.3fr_0.9fr] max-md2:grid-cols-1 pt-12 pb-12 primary-container">
       {/* Hero content portion */}
-      <div className={`max-w-[58ch] max-md2:max-w-[46ch] max-md2:text-center`}>
+      <div className={`max-w-[62ch] max-md2:max-w-[46ch] max-md2:text-center`}>
         <h1
           className={clsx(
             `mb-4 font-serif font-normal text-sand-900 max-xs3:text-3xl max-md3:text-4xl text-5xl leading-[1.2] max-xs3:leading-[1.3]`,
