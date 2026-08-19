@@ -1,48 +1,27 @@
 import Link from "next/link";
 import PageHeading from "../_components/ui/page-heading";
+import { getCollection } from "../_lib/content";
 
-export const articles = [
-  {
-    id: "learning-how-to-sing",
-    title: "What Distributed Systems Taught Me About Singing",
-    date: "May 12, 2024",
-    readTime: "6 min read",
-    excerpt:
-      "At first glance, vocal pedagogy and software architecture have nothing in common. But both are about managing tension, flow, and graceful degradation.",
-    content: "Content pending...",
-  },
-  {
-    id: "the-builder-mindset",
-    title: "The Builder's Mindset: When to Stop Planning",
-    date: "January 28, 2024",
-    readTime: "8 min read",
-    excerpt:
-      "Analysis paralysis is the enemy of the polymath. How I learned to start building before I felt 'ready'.",
-    content: "Content pending...",
-  },
-  {
-    id: "why-i-build-useless-things",
-    title: "In Defense of Useless Projects",
-    date: "November 03, 2023",
-    readTime: "5 min read",
-    excerpt:
-      "Not everything needs an ROI. Sometimes, building something just to see if you can is the best way to learn.",
-    content: "Content pending...",
-  },
-];
+// calculate read time
+function calculateReadTime(content: string): string {
+  const wordsPerMinute = 200; // Average reading speed
+  const words = content.split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
+}
 
-export default function Writing() {
+export default async function Writing() {
+  const posts = await getCollection("writing");
+
   // Group articles by year
-  const groupedPosts = articles.reduce(
-    (acc, article) => {
-      // Extract year from date string (e.g., "May 12, 2024" -> "2024")
-      const year = article.date.split(", ")[1] || "2024";
-      if (!acc[year]) acc[year] = [];
-      acc[year].push(article);
-      return acc;
-    },
-    {} as Record<string, typeof articles>,
-  );
+  const groupedPosts: Record<string, typeof posts> = {};
+  posts.forEach((post) => {
+    const year = new Date(post.date).getFullYear().toString();
+    if (!groupedPosts[year]) {
+      groupedPosts[year] = [];
+    }
+    groupedPosts[year].push(post);
+  });
 
   // Sort years descending
   const years = Object.keys(groupedPosts).sort().reverse();
@@ -62,8 +41,8 @@ export default function Writing() {
             <div className="flex flex-col gap-6">
               {groupedPosts[year].map((post) => (
                 <Link
-                  key={post.id}
-                  href={`/writing/${post.id}`}
+                  key={post.slug}
+                  href={`/writing/${post.slug}`}
                   className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 p-4 -mx-4 hover:bg-sand-100 transition-colors rounded-sm"
                 >
                   {/* Extract just the month and day for the list view */}
@@ -76,7 +55,8 @@ export default function Writing() {
                     </h3>
                   </div>
                   <span className="font-mono text-xs text-sand-400 hidden md:block">
-                    {post.readTime}
+                    {/* TODO: Implement read time */}
+                    {"post.readTime"}
                   </span>
                 </Link>
               ))}
