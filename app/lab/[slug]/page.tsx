@@ -1,3 +1,4 @@
+import MDXContent from "@/app/_components/mdx-content";
 import { getContent } from "@/app/_lib/content";
 
 export default async function LabPost({
@@ -17,7 +18,7 @@ export default async function LabPost({
 
       <p>{post.frontmatter.date}</p>
 
-      <pre>{post.content}</pre>
+      <MDXContent source={post.content} />
     </article>
   );
 }

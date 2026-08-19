@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 import { contentDirectories } from "./config";
+import { getReadingStats } from "./reading-time";
 import type {
   ContentDocument,
   ContentFrontmatter,
@@ -28,14 +29,17 @@ export async function getCollection(type: ContentType): Promise<ContentItem[]> {
     const filePath = path.join(directory, fileName);
     const rawContent = await fs.readFile(filePath, "utf8");
 
-    const { data } = matter(rawContent);
+    const { data, content } = matter(rawContent);
 
     const frontmatter = data as ContentFrontmatter;
+    const { readingTime, wordCount } = getReadingStats(content);
 
     items.push({
       ...frontmatter,
       slug: fileName.replace(/\.mdx$/, ""),
       type,
+      readingTime,
+      wordCount,
     });
   }
 
@@ -54,11 +58,16 @@ export async function getContent(
 
   const { data, content } = matter(rawContent);
 
+  const frontmatter = data as ContentFrontmatter;
+  const { readingTime, wordCount } = getReadingStats(content);
+
   return {
-    frontmatter: data as ContentFrontmatter,
+    frontmatter,
     content,
     slug,
     type,
+    readingTime,
+    wordCount,
   };
 }
 

@@ -4,15 +4,23 @@ export type ContentFrontmatter = {
   title: string;
   description: string;
   date: string;
+
   published?: boolean;
   tags?: string[];
   coverImage?: string;
+
+  startDate?: string;
+  endDate?: string;
+
+  liveUrl?: string;
+  sourceUrl?: string;
 };
 
 export type ContentItem = ContentFrontmatter & {
   slug: string;
   type: ContentType;
-  readTime?: string;
+  readingTime: number;
+  wordCount: number;
 };
 
 export type ContentDocument = {
@@ -20,4 +28,6 @@ export type ContentDocument = {
   content: string;
   slug: string;
   type: ContentType;
+  readingTime: number;
+  wordCount: number;
 };
