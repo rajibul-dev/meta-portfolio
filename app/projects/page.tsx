@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import PageHeading from "../_components/ui/page-heading";
 import { getCollection } from "../_lib/content";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Selected software projects and case studies by Rajibul Islam.",
+};
 
 export default async function Projects() {
   const projects = await getCollection("projects");

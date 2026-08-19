@@ -1,14 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeading from "../_components/ui/page-heading";
 import { getCollection } from "../_lib/content";
 
-// calculate read time
-function calculateReadTime(content: string): string {
-  const wordsPerMinute = 200; // Average reading speed
-  const words = content.split(/\s+/).length;
-  const minutes = Math.ceil(words / wordsPerMinute);
-  return `${minutes} min read`;
-}
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Essays, technical deep-dives, and reflections on engineering, art, learning, and building.",
+};
 
 export default async function Writing() {
   const posts = await getCollection("writing");
@@ -54,9 +53,8 @@ export default async function Writing() {
                       {post.title}
                     </h3>
                   </div>
-                  <span className="font-mono text-xs text-sand-400 hidden md:block">
-                    {/* TODO: Implement read time */}
-                    {"post.readTime"}
+                  <span className="hidden font-mono text-xs text-sand-400 md:block">
+                    {post.readingTime} min read
                   </span>
                 </Link>
               ))}

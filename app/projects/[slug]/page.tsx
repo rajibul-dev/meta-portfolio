@@ -1,9 +1,36 @@
 import MDXContent from "@/app/_components/mdx-content";
 import { getContent } from "@/app/_lib/content";
+import { buildContentMetadata } from "@/app/_lib/seo";
+import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  try {
+    const post = await getContent("projects", slug);
+    const { frontmatter } = post;
+
+    return buildContentMetadata({
+      title: frontmatter.title ?? "Project",
+      description: frontmatter.description,
+      content: post.content,
+      path: `/projects/${slug}`,
+      image: frontmatter.coverImage,
+      date: frontmatter.date,
+      published: frontmatter.published,
+    });
+  } catch {
+    return {};
+  }
+}
 
 export default async function ProjectPost({
   params,

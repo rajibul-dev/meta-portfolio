@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Rajibul Islam — software engineering, singing, learning, and the ideas that connect them.",
+};
 
 export default function About() {
   return (

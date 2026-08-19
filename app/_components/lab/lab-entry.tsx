@@ -31,13 +31,6 @@ type LabEntryProps = {
   children: React.ReactNode;
 };
 
-const labLabels: Record<LabType, string> = {
-  music: "Music",
-  code: "Code",
-  reading: "Reading",
-  note: "Note",
-};
-
 export default function LabEntry({
   slug,
   date,
@@ -50,7 +43,6 @@ export default function LabEntry({
   const [expanded, setExpanded] = useState(false);
 
   const Icon = icons[labType];
-  // const label = labLabels[labType];
 
   return (
     <article className="relative pl-8 md:pl-12">

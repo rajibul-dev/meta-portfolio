@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import PageHeading from "../_components/ui/page-heading";
 
 const contactsAfterEmail = [
@@ -17,6 +18,12 @@ const contactsAfterEmail = [
     text: "linkedin.com/in/rajibul-dev/",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Rajibul Islam.",
+};
 
 export default function Contact() {
   return (

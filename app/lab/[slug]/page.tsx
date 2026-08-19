@@ -1,5 +1,7 @@
 import MDXContent from "@/app/_components/mdx-content";
 import { getContent } from "@/app/_lib/content";
+import { buildContentMetadata } from "@/app/_lib/seo";
+import type { Metadata } from "next";
 import { ArrowLeft, BookOpen, Code, FileText, Music } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -19,6 +21,32 @@ const labels: Record<LabType, string> = {
   reading: "Reading",
   note: "Note",
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  try {
+    const post = await getContent("lab", slug);
+    const labType: LabType = post.frontmatter.labType ?? "note";
+    const label = labels[labType];
+
+    return buildContentMetadata({
+      title: `Lab Note: ${label}`,
+      description: post.frontmatter.description,
+      content: post.content,
+      path: `/lab/${slug}`,
+      image: post.frontmatter.coverImage,
+      date: post.frontmatter.date,
+      published: post.frontmatter.published,
+    });
+  } catch {
+    return {};
+  }
+}
 
 export default async function LabPost({
   params,

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import MDXContent from "@/app/_components/mdx-content";
 import LabEntry from "@/app/_components/lab/lab-entry";
@@ -13,6 +14,12 @@ function getPreviewSource(content: string) {
 
   return blocks.find((block) => !block.startsWith("#")) ?? "";
 }
+
+export const metadata: Metadata = {
+  title: "The Lab",
+  description:
+    "An ongoing log of experiments, learning, observations, sketches, and unfinished ideas.",
+};
 
 export default async function Lab() {
   const logs = await getCollection("lab");
