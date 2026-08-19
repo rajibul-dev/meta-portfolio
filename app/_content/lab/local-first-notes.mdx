@@ -1,0 +1,16 @@
+---
+date: "2026-08-18"
+published: true
+labType: "code"
+permalink: true
+tags:
+  - software
+  - local-first
+  - architecture
+---
+
+I've been thinking about what a genuinely local-first notes app should feel like.
+
+The interesting constraint isn't simply storing data locally. It's making the application feel completely normal when the network disappears, while synchronization becomes an implementation detail rather than the user's problem.
+
+A small prototype using an append-only operation log is starting to make more sense than trying to synchronize the final document state directly.

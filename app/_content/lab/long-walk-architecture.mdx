@@ -1,0 +1,24 @@
+---
+date: "2026-07-18"
+published: true
+labType: "note"
+tags:
+  - architecture
+  - reflection
+---
+
+I keep noticing that architecture decisions become easier after leaving the editor for a while.
+
+Today I spent half an hour walking without trying to solve the problem. The issue was a small content-loading abstraction that had started accumulating exceptions.
+
+The eventual solution was embarrassingly simple: the abstraction didn't need to know about every possible content type. It only needed to provide the filesystem-level operations, while the content-specific interpretation belonged one layer above.
+
+This is probably one of those lessons that I'll have to relearn several times.
+
+The annoying thing about software architecture is that the clean solution often looks obvious only after you've spent enough time making the messy one complicated.
+
+---
+
+There is probably a broader lesson here about abstraction itself.
+
+An abstraction should remove a decision from the caller. If it merely moves the decision somewhere else, it may not be buying much.

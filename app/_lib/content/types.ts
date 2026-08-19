@@ -1,8 +1,8 @@
 export type ContentType = "projects" | "writing" | "lab";
 
 export type ContentFrontmatter = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   date: string;
 
   published?: boolean;
@@ -14,6 +14,9 @@ export type ContentFrontmatter = {
 
   liveUrl?: string;
   sourceUrl?: string;
+
+  labType?: "music" | "code" | "reading" | "note";
+  permalink?: boolean;
 };
 
 export type ContentItem = ContentFrontmatter & {

@@ -31,7 +31,7 @@ export default async function Projects() {
                   <div className="aspect-4/3 overflow-hidden border border-sand-200 bg-sand-200 p-2 shadow-sm">
                     <Image
                       src={project.coverImage}
-                      alt={project.title}
+                      alt={project.title || "Project cover image"}
                       width={1200}
                       height={900}
                       className="h-full w-full object-cover grayscale opacity-90 mix-blend-multiply transition-all duration-1000 group-hover:scale-105 group-hover:grayscale-0"

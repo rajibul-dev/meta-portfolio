@@ -1,0 +1,23 @@
+---
+date: "2026-07-12"
+published: true
+labType: "code"
+tags:
+  - web-audio
+  - music
+  - experiment
+---
+
+Idea for a tiny Web Audio experiment:
+
+````ts
+const oscillator = audioContext.createOscillator();
+const gain = audioContext.createGain();
+
+oscillator.connect(gain);
+gain.connect(audioContext.destination);
+````
+
+The fun part would be turning a tiny text description into a playable generative soundscape.
+
+Something like writing a score in Markdown, except the output is audio rather than HTML.

@@ -68,7 +68,7 @@ export default async function ProjectPost({
             width={1200}
             height={675}
             src={frontmatter.coverImage}
-            alt={frontmatter.title}
+            alt={frontmatter.title || "Project cover image"}
             className="aspect-video h-auto w-full object-cover"
           />
         </figure>
