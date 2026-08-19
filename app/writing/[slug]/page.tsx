@@ -41,10 +41,7 @@ export default async function WritingPost({
         </p>
       </header>
 
-      {/* MDX */}
-      <div className="md:col-span-9 max-md:col-span-1">
-        <MDXContent source={post.content} />
-      </div>
+      <MDXContent source={post.content} />
     </article>
   );
 }

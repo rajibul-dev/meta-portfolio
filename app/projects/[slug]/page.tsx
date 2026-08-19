@@ -80,7 +80,7 @@ export default async function ProjectPost({
       <div className="grid grid-cols-12 max-md:grid-cols-1 gap-12">
         {/* Useful project context */}
         <aside className="self-start sticky top-24 col-span-3 max-md:static max-md:col-span-1 mt-2.5 text-sm text-sand-600">
-          <div className="space-y-7">
+          <div className="flex flex-col gap-6 max-md:flex-row max-md:gap-8">
             {(frontmatter.liveUrl || frontmatter.sourceUrl) && (
               <div>
                 <h2 className="mb-2 font-mono text-xs font-medium uppercase tracking-wide text-sand-900">
@@ -127,7 +127,7 @@ export default async function ProjectPost({
                   Timeline
                 </h2>
 
-                <div className="space-y-1">
+                <div className="space-y-1.5">
                   {frontmatter.startDate && (
                     <p>
                       Started{" "}
@@ -156,7 +156,7 @@ export default async function ProjectPost({
         </aside>
 
         {/* MDX */}
-        <div className="md:col-span-9 max-md:col-span-1">
+        <div className="col-span-9 min-w-0 max-md:col-span-1">
           <MDXContent source={post.content} />
         </div>
       </div>

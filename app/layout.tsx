@@ -37,7 +37,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="grid grid-rows-[auto_1fr] bg-sand-50 selection:bg-sand-200 min-h-screen text-sand-900 [grid-template-area:'header'_'main'_'footer']"
+        className="grid min-h-screen grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr] bg-sand-50 text-sand-900 selection:bg-sand-200 [grid-template-area:'header'_'main'_'footer']"
         suppressHydrationWarning
       >
         <Navbar />
