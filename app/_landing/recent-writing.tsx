@@ -41,10 +41,10 @@ export default async function RecentWriting() {
       </SectionHeading>
 
       <div className="flex flex-col gap-8 max-xs3:gap-6">
-        {recentWriting.map((post, i) => (
+        {recentWriting.map((post) => (
           <Link
-            href="/writing"
-            key={i}
+            href={`/writing/${post.slug}`}
+            key={post.slug}
             className="group flex md:flex-row flex-col md:items-baseline gap-2 md:gap-12 pb-8 border-sand-200 last:border-0 border-b"
           >
             <time className="md:w-32 font-mono text-sand-500 text-sm shrink-0">

@@ -34,6 +34,9 @@ export async function getCollection(type: ContentType): Promise<ContentItem[]> {
     const frontmatter = data as ContentFrontmatter;
     const { readingTime, wordCount } = getReadingStats(content);
 
+    // Skip unpublished content
+    if (data.published === false) continue;
+
     items.push({
       ...frontmatter,
       slug: fileName.replace(/\.mdx$/, ""),
