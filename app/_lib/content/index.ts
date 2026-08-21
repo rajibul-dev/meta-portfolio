@@ -71,6 +71,12 @@ export async function getContent(
   };
 }
 
+export async function getFeaturedProjects(limit = 3): Promise<ContentItem[]> {
+  const projects = await getCollection("projects");
+
+  return projects.filter((project) => project.featured).slice(0, limit);
+}
+
 export async function getAllContent(): Promise<ContentItem[]> {
   const collections = await Promise.all([
     getCollection("projects"),

@@ -6,6 +6,7 @@ export type ContentFrontmatter = {
   date: string;
 
   published?: boolean;
+  featured?: boolean;
   tags?: string[];
   coverImage?: string;
 

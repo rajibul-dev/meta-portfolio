@@ -2,15 +2,16 @@ import Link from "next/link";
 import SectionHeading from "../_components/ui/section-heading";
 import Button from "../_components/ui/button";
 import QuoteAttention from "../_components/ui/quote-attention";
-import { getCollection } from "../_lib/content";
+import { getFeaturedProjects } from "../_lib/content";
 
 export default async function FeaturedWork() {
-  const projects = await getCollection("projects");
-
-  const fetchSelectedProjects = projects.slice(0, 3);
+  const projects = await getFeaturedProjects(3);
 
   return (
-    <section className="py-20 max-sm:py-16 primary-container">
+    <section
+      id="featured-work"
+      className="py-20 max-sm:py-16 primary-container"
+    >
       <SectionHeading>
         <SectionHeading.Heading>Featured Work</SectionHeading.Heading>
       </SectionHeading>
@@ -21,7 +22,7 @@ export default async function FeaturedWork() {
       </p>
 
       <div className="flex flex-col gap-3 mb-9">
-        {fetchSelectedProjects.map((project) => (
+        {projects.map((project) => (
           <WorkListItem
             title={project.title || "Untitled Project"}
             href={`/projects/${project.slug}`}

@@ -78,6 +78,8 @@ const components: MDXComponents = {
     <a
       {...props}
       className="font-medium text-sand-600 underline decoration-sand-300 underline-offset-6 transition-colors hover:text-amber-700 hover:decoration-amber-700/50"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {children}
     </a>

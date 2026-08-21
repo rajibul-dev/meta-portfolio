@@ -49,9 +49,12 @@ export default async function Writing() {
                     {post.date.split(",")[0]}
                   </time>
                   <div className="flex-1">
-                    <h3 className="text-xl font-serif text-sand-900 group-hover:text-amber-700 transition-colors">
+                    <h3 className="text-xl font-serif mb-1 text-sand-900 group-hover:text-amber-700 transition-colors">
                       {post.title}
                     </h3>
+                    <p className="text-sand-600 text-sm leading-relaxed">
+                      {post.description}
+                    </p>
                   </div>
                   <span className="hidden font-mono text-xs text-sand-400 md:block">
                     {post.readingTime} min read

@@ -1,31 +1,38 @@
 import Link from "next/link";
 import SectionHeading from "../_components/ui/section-heading";
 import Button from "../_components/ui/button";
+import { getCollection } from "../_lib/content";
 
-const recentWriting = [
-  {
-    title: "The Parallels Between Refactoring Code and Vocal Technique",
-    date: "Oct 12, 2025",
-    excerpt:
-      "How learning to place my voice changed the way I think about decoupling software modules.",
-  },
-  {
-    title: "Why I Stopped Using Dashboards",
-    date: "Sep 28, 2025",
-    excerpt:
-      "An essay on digital minimalism, intention, and building a text-first interface for my personal life.",
-  },
-  {
-    title: "Navigating the Messy Middle of Learning",
-    date: "Aug 05, 2025",
-    excerpt:
-      "Thoughts on embracing the plateau and finding joy in the microscopic improvements.",
-  },
-];
+// const recentWriting = [
+//   {
+//     title: "The Parallels Between Refactoring Code and Vocal Technique",
+//     date: "Oct 12, 2025",
+//     excerpt:
+//       "How learning to place my voice changed the way I think about decoupling software modules.",
+//   },
+//   {
+//     title: "Why I Stopped Using Dashboards",
+//     date: "Sep 28, 2025",
+//     excerpt:
+//       "An essay on digital minimalism, intention, and building a text-first interface for my personal life.",
+//   },
+//   {
+//     title: "Navigating the Messy Middle of Learning",
+//     date: "Aug 05, 2025",
+//     excerpt:
+//       "Thoughts on embracing the plateau and finding joy in the microscopic improvements.",
+//   },
+// ];
 
-export default function RecentWriting() {
+export default async function RecentWriting() {
+  const writing = await getCollection("writing");
+  const recentWriting = writing.slice(0, 3);
+
   return (
-    <section className="py-20 max-sm:py-16 primary-container">
+    <section
+      id="recent-writing"
+      className="py-20 max-sm:py-16 primary-container"
+    >
       <SectionHeading>
         <SectionHeading.Heading>Recent Writing</SectionHeading.Heading>
         <SectionHeading.PageLink href="/writing">
@@ -48,7 +55,7 @@ export default function RecentWriting() {
                 {post.title}
               </h3>
               <p className="text-sand-600 text-sm leading-relaxed">
-                {post.excerpt}
+                {post.description}
               </p>
             </div>
           </Link>
