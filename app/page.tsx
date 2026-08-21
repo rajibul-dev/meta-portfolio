@@ -6,9 +6,9 @@ import Hero from "./_landing/hero";
 import RecentWriting from "./_landing/recent-writing";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Rajibul Islam || Raji ラジ",
   description:
-    "Rajibul Islam's personal corner of the internet — software, singing, writing, experiments, learning, and other interests.",
+    "Welcome to my personal corner of the internet. Here, I share my thoughts, projects, case studies, and experiences in software engineering, along with the other things that I like. I want this space to be useful and inspiring.",
 };
 
 export default function Home() {

@@ -19,17 +19,17 @@ export default function Hero() {
           <span>Hi, I'm Rajibul Islam.</span>
           <br />
           <span className="text-sand-500">
-            Software Engineer, Aspiring Singer, and Lifelong Student of
-            Interesting Things.
+            I build useful software and create things I hope people find
+            enjoyable.
           </span>
         </h1>
         <p
-          className={`mb-8 max-w-[60ch] text-sand-700 max-md3:text-base text-lg leading-[1.7] hero-copy max-xs3:leading-[1.6]`}
+          className={`mb-8 max-w-[60ch] text-sand-700 max-md3:text-base text-lg leading-[1.7] max-xs3:leading-[1.6]`}
         >
-          I use this space to share projects, document what I'm learning, and
-          tell the stories behind the things I build. From software engineering
-          and design to singing and creative exploration, this site is a record
-          of curiosity in motion.
+          This is my corner of the internet, where I share the software I build,
+          what I'm learning, and experiments I'm curious about. It's a place to
+          see how I think, what I can do, and what I'm working towards, whether
+          you're here to explore my work, learn something, or work with me.
         </p>
 
         {/* hero buttons */}

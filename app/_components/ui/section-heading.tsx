@@ -13,7 +13,9 @@ export default function SectionHeading({
 }
 
 function Heading({ children }: { children: React.ReactNode }) {
-  return <h2 className="font-serif text-sand-900 text-2xl">{children}</h2>;
+  return (
+    <h2 className="font-serif mb-1.5 text-sand-900 text-4xl">{children}</h2>
+  );
 }
 
 function PageLink({
@@ -24,7 +26,10 @@ function PageLink({
   children: React.ReactNode;
 }) {
   return (
-    <Link href={href} className="flex items-center gap-1 font-medium hover:text-amber-700 transition-colors">
+    <Link
+      href={href}
+      className="flex items-center gap-1 font-medium hover:text-amber-700 transition-colors"
+    >
       {children}
     </Link>
   );

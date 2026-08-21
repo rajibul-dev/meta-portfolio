@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Raji ラジ",
-    title: "Raji ラジ — Rajibul Islam",
+    title: "Raji ラジ - Rajibul Islam",
     description:
       "Rajibul Islam's personal corner of the internet — software engineering, singing, learning, experiments, writing, and everything in between.",
     locale: "en_IN",
@@ -81,8 +81,8 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Navbar />
-        <div className="mt-(--header-height)">
-          <div className="">
+        <div className="mt-(--header-height) flex min-h-0 flex-col">
+          <div className="flex flex-1 flex-col">
             {children}
             <Footer />
           </div>

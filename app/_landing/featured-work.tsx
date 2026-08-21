@@ -2,37 +2,31 @@ import Link from "next/link";
 import SectionHeading from "../_components/ui/section-heading";
 import Button from "../_components/ui/button";
 import QuoteAttention from "../_components/ui/quote-attention";
+import { getCollection } from "../_lib/content";
 
-const featuredWork = [
-  { title: "Voccaria", category: "Case Study", href: "/projects" },
-  {
-    title: "Twitch Timestamp Grabber",
-    category: "Case Study",
-    href: "/projects",
-  },
-  { title: "High Quality VC", category: "Experiment", href: "/projects" },
-];
+export default async function FeaturedWork() {
+  const projects = await getCollection("projects");
 
-export default function FeaturedWork() {
+  const fetchSelectedProjects = projects.slice(0, 3);
+
   return (
-    <section className="py-20 max-sm:py-16 narrow-container">
+    <section className="py-20 max-sm:py-16 primary-container">
       <SectionHeading>
         <SectionHeading.Heading>Featured Work</SectionHeading.Heading>
       </SectionHeading>
 
-      <p className="mb-8 max-w-[68ch] text-sand-700 text-base leading-[1.7] hero-copy">
-        From re-architecting legacy data pipelines to building real-time vocal
-        resonance trackers, my projects span deep backend systems and
-        exploratory frontend interfaces.
+      <p className="mb-8 max-w-[68ch] text-sand-700 text-md leading-[1.7]">
+        A selection of projects I've built, from client work to personal
+        projects and experiments.
       </p>
 
       <div className="flex flex-col gap-3 mb-9">
-        {featuredWork.map((work) => (
+        {fetchSelectedProjects.map((project) => (
           <WorkListItem
-            title={work.title}
-            href={work.href}
-            category={work.category}
-            key={work.title}
+            title={project.title || "Untitled Project"}
+            href={`/projects/${project.slug}`}
+            category={project.tags?.[0] ?? "Case Study"}
+            key={project.slug}
           />
         ))}
       </div>
@@ -40,10 +34,13 @@ export default function FeaturedWork() {
 
       {/* Lab Signal */}
       <QuoteAttention>
-        <p className="mb-1 text-sand-600 text-sm max-xs2:leading-relaxed">
+        <p className="mb-1 text-sand-600 text-base max-xs2:leading-relaxed">
           Looking for raw experiments and unpolished ideas?
         </p>
-        <Button variant="link" href="/lab">
+        <Button
+          variant="link"
+          href="/lab"
+        >
           Peek into the lab &rarr;
         </Button>
       </QuoteAttention>

@@ -21,15 +21,14 @@ const contactsAfterEmail = [
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Get in touch with Rajibul Islam.",
+  description: "Get in touch with Rajibul Islam.",
 };
 
 export default function Contact() {
   return (
     <main>
       <PageHeading
-        paragraph="I'm always open to interesting conversations about software architecture, vocal technique, digital minimalism, or anything else you found interesting here."
+        paragraph="If you'd like to work together, talk about something I've built, or just have a conversation about software, music, or the other things I'm exploring, feel free to get in touch."
         className="text-center max-w-[65ch]! mx-auto"
         pClassName="max-w-full"
       >
@@ -41,10 +40,10 @@ export default function Contact() {
           Email
         </h2>
         <a
-          href="mailto:hello@example.com"
+          href="mailto:hello@rajidev.com"
           className="max-md:text-2xl text-3xl font-serif text-sand-900 hover:text-sand-600 transition-colors underline decoration-sand-300 underline-offset-8 block text-center"
         >
-          hello@example.com
+          hello@rajidev.com
         </a>
       </section>
 
@@ -60,6 +59,8 @@ export default function Contact() {
             <a
               href={contact.href}
               className="text-lg font-medium text-sand-800 hover:text-sand-500 transition-colors text-center hover:underline decoration-sand-300 underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {contact.text}
             </a>

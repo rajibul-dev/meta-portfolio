@@ -25,7 +25,7 @@ const recentWriting = [
 
 export default function RecentWriting() {
   return (
-    <section className="py-20 max-sm:py-16 narrow-container">
+    <section className="py-20 max-sm:py-16 primary-container">
       <SectionHeading>
         <SectionHeading.Heading>Recent Writing</SectionHeading.Heading>
         <SectionHeading.PageLink href="/writing">

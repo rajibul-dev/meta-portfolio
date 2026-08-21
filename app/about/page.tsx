@@ -3,8 +3,6 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "About Rajibul Islam — software engineering, singing, learning, and the ideas that connect them.",
 };
 
 export default function About() {
@@ -26,66 +24,116 @@ export default function About() {
             </div>
 
             <figcaption className="mt-4 text-center font-mono text-xs text-sand-500">
-              Thinking about architecture and acoustics.
+              Rajibul Islam - 2026
             </figcaption>
           </figure>
         </div>
 
         <div className="max-w-3xl text-xl leading-[1.7] text-sand-800">
           <p className="mb-6 font-serif text-2xl leading-relaxed text-sand-900">
-            I'm Rajibul. Online, I often go by Raji or ラジ. I am fascinated by
-            the intersection of rigid logic and fluid expression.
+            I'm Rajibul. Online, I usually go by Raji, or ラジ.
           </p>
 
-          <p className="mb-6">
-            By day, I am a software developer. I love taking complex, messy
-            domain problems and translating them into elegant, maintainable
-            systems. There's a specific kind of quiet joy in deleting code,
-            simplifying architecture, and making things run just a little bit
-            smoother.
-          </p>
+          <Paragraph>
+            I'm a software developer who likes understanding how things work and
+            building things that are useful to people. I enjoy working across
+            the stack, from interfaces and application logic to databases,
+            deployment, and the systems underneath them.
+          </Paragraph>
 
-          <p className="mb-6">
-            Away from the keyboard, I am an aspiring singer. It's a completely
-            different kind of discipline—one that requires me to get out of my
-            head and into my body. Studying voice has taught me more about
-            vulnerability, patience, and incremental progress than any technical
-            book ever could.
-          </p>
+          <Paragraph>
+            I originally got interested in software through the web. When I
+            learned HTML and CSS, I was fascinated by the fact that I could
+            create something that looked like the websites I used every day.
+            JavaScript opened up another level of possibilities: programming
+            meant I could make things actually do things, and learning more gave
+            me more abilities to build different kinds of software.
+          </Paragraph>
 
-          <p className="mb-6">
-            I consider myself a polymath at heart. I don't believe in confining
-            myself to a single discipline. I am as likely to be found reading
-            about compiler design as I am studying vocal pedagogy or practicing
-            Japanese kanji. I believe that ideas cross-pollinate, and that the
-            best insights often come from outside one's immediate field of
-            expertise.
-          </p>
+          <Paragraph>
+            That curiosity has stayed with me. These days, I'm interested in
+            much more than just learning another framework. I like exploring
+            foundational concepts and building small things to understand them,
+            whether that means experimenting with servers and protocols,
+            deployment, rendering, or other parts of computing that are usually
+            hidden underneath an application.
+          </Paragraph>
+
+          <Paragraph>
+            I've found that this kind of experimentation changes the way I see
+            software. The more I understand what is underneath the abstractions,
+            the more possibilities I see for things I could build. And when
+            those ideas are combined with good UX and thoughtful design,
+            software can become something that people genuinely enjoy using.
+          </Paragraph>
+
+          <Paragraph>
+            My experience so far is primarily with the JavaScript ecosystem:
+            React, Next.js, Node.js, TypeScript, and Express.js. I've built
+            personal projects as well as long-term client software, including
+            Voccaria, a web application for a singing teacher that I've
+            continued developing and maintaining while working directly with its
+            founder.
+          </Paragraph>
+
+          <Paragraph>
+            I'm also expanding into C# and .NET, and exploring game development
+            with Godot and Unity. Game development interests me not simply
+            because I like games, but because it opens up an entirely different
+            world of programming. Systems, graphics, physics, interaction,
+            simulation, audio, and the possibility of creating whole experiences
+            rather than just applications.
+          </Paragraph>
+
+          <Paragraph>
+            Software is a major part of what I want to do, but it isn't the only
+            thing I want to make.
+          </Paragraph>
+
+          <Paragraph>
+            Singing is an important part of my life, and I want to keep
+            developing as a singer while exploring voice acting and other forms
+            of entertainment. I'm learning Japanese because I genuinely enjoy
+            the language, music, and culture. I'm also interested in 3D
+            creation, and in the many other things that become possible once I
+            have the skills to make them.
+          </Paragraph>
+
+          <Paragraph>
+            I don't want to decide too early what the final shape of all this
+            has to be. I like the idea of becoming capable of making very
+            different kinds of things, and letting the things I make tell that
+            story over time.
+          </Paragraph>
 
           <h2 className="mt-12 mb-6 font-serif text-3xl text-sand-900">
-            The Philosophy Behind This Space
+            Why This Website Exists
           </h2>
 
-          <p className="mb-6">
-            This website isn't a resume, nor is it a startup landing page trying
-            to convert you into a customer. It's a digital garden. A personal
-            corner of the internet where I can exist as a whole person, not just
-            a list of skills or a job title.
-          </p>
+          <Paragraph>
+            This is my corner of the internet. It's where I keep my projects,
+            case studies, writing, experiments, and the things I'm learning.
+            Some things here will be finished work; others will simply document
+            something I'm still figuring out.
+          </Paragraph>
 
-          <p className="mb-6">
-            You'll find polished case studies sitting next to half-baked
-            thoughts. You'll find essays on software alongside logs of my
-            singing practice. It's designed for reading, exploring, and quiet
-            contemplation.
-          </p>
+          <Paragraph>
+            I also want it to be useful to people who might want to work with
+            me. A résumé can tell you what technologies I've used, but it can't
+            really show how I approach problems, what I choose to build, or what
+            I'm interested in becoming capable of.
+          </Paragraph>
 
-          <blockquote className="mt-10 border-l-2 border-amber-700/50 bg-amber-700/5 py-4 pl-6 pr-5 font-serif text-xl italic leading-relaxed text-sand-700">
-            "The most beautiful thing we can experience is the mysterious. It is
-            the source of all true art and all science."
-          </blockquote>
+          <Paragraph>
+            So this site is both a record of what I've made and a place for what
+            comes next.
+          </Paragraph>
         </div>
       </article>
     </main>
   );
+}
+
+function Paragraph({ children }: { children: React.ReactNode }) {
+  return <p className="mb-6">{children}</p>;
 }

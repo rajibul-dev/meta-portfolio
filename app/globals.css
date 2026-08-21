@@ -168,6 +168,10 @@ button {
   word-spacing: 1.2pt;
 }
 
+.standard-para {
+  @apply max-md3:text-base text-lg leading-[1.7] max-xs3:leading-[1.6];
+}
+
 .narrow-container {
   @apply mx-auto px-4 max-w-5xl!;
 }

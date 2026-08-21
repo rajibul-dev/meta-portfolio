@@ -31,7 +31,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50 border-b h-(--header-height) border-sand-200 bg-sand-50/70 backdrop-blur-sm">
+    <header className="fixed top-0 w-full z-50 border-b h-(--header-height) border-sand-200 bg-sand-50/80 backdrop-blur-sm">
       <div className="flex justify-between items-center mx-auto px-4 h-full primary-container">
         {/* logo basically */}
         <Wordmark />
@@ -40,7 +40,10 @@ export default function Navbar() {
         <nav className="max-md:hidden h-full">
           <ul className="flex items-stretch gap-8 h-full">
             {NAV_LINKS.map((link) => (
-              <li key={link.href} className="h-full">
+              <li
+                key={link.href}
+                className="h-full"
+              >
                 <Link
                   href={link.href}
                   className={clsx(
