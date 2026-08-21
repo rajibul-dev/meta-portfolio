@@ -24,6 +24,25 @@ const jetbrains_mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: SITE_URL,
 
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      {
+        url: "/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+      {
+        url: "/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
+
   title: {
     default: "Raji ラジ — Rajibul Islam",
     template: "%s — Raji ラジ",

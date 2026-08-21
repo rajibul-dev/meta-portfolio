@@ -4,6 +4,7 @@ import { buildContentMetadata } from "@/app/_lib/seo";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -37,7 +38,13 @@ export default async function WritingPost({
 }) {
   const { slug } = await params;
 
-  const post = await getContent("writing", slug);
+  let post;
+
+  try {
+    post = await getContent("writing", slug);
+  } catch {
+    notFound();
+  }
 
   return (
     <article className="max-w-205 mx-auto px-4 pt-16 pb-20">
