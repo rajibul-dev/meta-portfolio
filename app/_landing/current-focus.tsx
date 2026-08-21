@@ -2,7 +2,7 @@ import ExternalLinkInline from "../_components/ui/external-link-inline";
 
 const currentFocusData = {
   learning: [
-    "UNIX/Linux for system-level programming, shell scripting, general computing, and for building advanced backend applications.",
+    "UNIX/Linux for system-level programming, shell scripting, general computing, improving work efficiency, and for building advanced backend applications.",
     <span key="nodejs">
       Node.js in-depth. Learning with the{" "}
       <ExternalLinkInline href="https://nodejs.org/docs/latest/api/">
