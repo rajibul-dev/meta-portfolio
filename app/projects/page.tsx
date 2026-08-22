@@ -7,8 +7,7 @@ import { getCollection } from "../_lib/content";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description:
-    "Selected software projects and case studies by Rajibul Islam.",
+  description: "Selected software projects and case studies by Rajibul Islam.",
 };
 
 export default async function Projects() {
@@ -20,7 +19,7 @@ export default async function Projects() {
         Selected Work
       </PageHeading>
 
-      <div className="primary-container px-4 pb-20">
+      <div className="primary-container pb-20">
         <div className="space-y-24">
           {projects.map((project, index) => (
             <Link
@@ -59,7 +58,7 @@ export default async function Projects() {
 
               {/* Project information */}
               <div className="col-span-5 flex h-full flex-col justify-center pt-4 max-md:col-span-1 max-md:pt-0">
-                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-sand-500">
+                <p className="mb-4 font-mono text-xs uppercase tracking-widest text-sand-500 max-md:mb-5">
                   {project.tags?.[0] && (
                     <>
                       {project.tags[0]}
@@ -69,13 +68,13 @@ export default async function Projects() {
                   {project.date}
                 </p>
 
-                <h2 className="mb-6 flex items-center gap-3 font-serif text-3xl text-sand-900 transition-colors group-hover:text-amber-700">
+                <h2 className="mb-6 flex items-center gap-3 font-serif text-3xl text-sand-900 transition-colors group-hover:text-amber-700 max-md:mb-3">
                   {project.title}
 
                   <ArrowUpRight className="h-5 w-5 translate-x-1 -translate-y-1 text-amber-700 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
                 </h2>
 
-                <p className="mb-8 leading-relaxed text-sand-700">
+                <p className="mb-8 text-lg leading-[1.7] max-md3:text-base max-xs3:leading-[1.6] text-sand-700">
                   {project.description}
                 </p>
 

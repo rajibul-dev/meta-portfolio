@@ -14,7 +14,9 @@ export default function SectionHeading({
 
 function Heading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-serif mb-1.5 text-sand-900 text-4xl">{children}</h2>
+    <h2 className="font-serif mb-1.5 max-md3:text-3xl max-xs3:text-2xl text-sand-900 text-4xl">
+      {children}
+    </h2>
   );
 }
 

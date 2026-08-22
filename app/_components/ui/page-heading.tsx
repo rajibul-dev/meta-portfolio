@@ -23,7 +23,7 @@ export default function PageHeading({
     >
       <h1
         className={clsx(
-          "font-serif text-sand-900 text-4xl md:text-5xl",
+          "font-serif text-sand-900 text-4xl md:text-5xl max-xs3:text-3xl",
           paragraph && "mb-6",
           hClassName,
         )}
@@ -34,7 +34,7 @@ export default function PageHeading({
       {paragraph && (
         <p
           className={clsx(
-            "max-w-[75ch] text-sand-700 text-lg leading-relaxed",
+            "max-w-[75ch] text-sand-700 text-lg leading-[1.7] max-md3:text-base max-xs3:leading-[1.6]",
             pClassName,
           )}
         >

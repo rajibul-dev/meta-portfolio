@@ -47,7 +47,7 @@ export default async function WritingPost({
   }
 
   return (
-    <article className="max-w-205 mx-auto px-4 pt-16 pb-20">
+    <article className="max-w-205 mx-auto px-5 pt-16 pb-20">
       <Link
         href="/writing"
         className="inline-flex items-center gap-2 text-sm font-medium text-sand-500 hover:text-amber-700 mb-12 transition-colors group"

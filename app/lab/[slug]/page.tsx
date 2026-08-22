@@ -68,7 +68,7 @@ export default async function LabPost({
   const label = labels[labType];
 
   return (
-    <article className="mx-auto max-w-205 px-4 pt-16 pb-20">
+    <article className="mx-auto max-w-205 px-5 pt-16 pb-20">
       <Link
         href="/lab"
         className="group mb-12 inline-flex items-center gap-2 text-sm font-medium text-sand-500 transition-colors hover:text-amber-700"
@@ -86,9 +86,7 @@ export default async function LabPost({
             <Icon className="h-4 w-4" />
           </div>
 
-          <time dateTime={post.frontmatter.date}>
-            {post.frontmatter.date}
-          </time>
+          <time dateTime={post.frontmatter.date}>{post.frontmatter.date}</time>
         </div>
 
         <h1 className="font-serif text-5xl leading-tight tracking-tight text-sand-900 max-md:text-4xl">

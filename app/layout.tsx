@@ -100,8 +100,8 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Navbar />
-        <div className="mt-(--header-height) flex min-h-0 flex-col">
-          <div className="flex flex-1 flex-col">
+        <div className="mt-(--header-height) flex min-h-0 min-w-0 flex-col">
+          <div className="flex min-w-0 flex-1 flex-col [&>main]:w-full [&>main]:min-w-0 [&>article]:w-full [&>article]:min-w-0">
             {children}
             <Footer />
           </div>

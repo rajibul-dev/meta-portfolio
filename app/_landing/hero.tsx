@@ -35,10 +35,10 @@ export default function Hero() {
         {/* hero buttons */}
         <div className="flex max-md2:justify-center gap-4">
           <Link
-            href="/writing"
+            href="/about"
             className={`bg-brown text-sand-100 hover:bg-amber-700 ${heroButtonCommonStyles}`}
           >
-            Read My Writing
+            Read About Me
           </Link>
           <Link
             href="/contact"

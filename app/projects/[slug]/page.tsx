@@ -50,7 +50,7 @@ export default async function ProjectPost({
   const { frontmatter } = post;
 
   return (
-    <article className="mx-auto max-w-300 px-4 pt-16 pb-20">
+    <article className="mx-auto max-w-300 px-5 pt-16 pb-20">
       {/* Back navigation */}
       <Link
         href="/projects"
@@ -110,7 +110,7 @@ export default async function ProjectPost({
           <div className="flex flex-col gap-6 max-md:flex-row max-md:gap-8">
             {(frontmatter.liveUrl || frontmatter.sourceUrl) && (
               <div>
-                <h2 className="mb-2 font-mono text-xs font-medium uppercase tracking-wide text-sand-900">
+                <h2 className="mb-2 max-md:text-sm font-mono text-xs font-medium uppercase tracking-wide text-sand-900">
                   Links
                 </h2>
 
@@ -120,7 +120,7 @@ export default async function ProjectPost({
                       href={frontmatter.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:text-sand-900"
+                      className="group max-md:text-base flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:text-sand-900"
                     >
                       Live project
                       <ExternalLink
@@ -135,7 +135,7 @@ export default async function ProjectPost({
                       href={frontmatter.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:text-sand-900"
+                      className="group max-md:text-base flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:text-sand-900"
                     >
                       Source code
                       <ExternalLink
@@ -150,13 +150,13 @@ export default async function ProjectPost({
 
             {(frontmatter.startDate || frontmatter.endDate) && (
               <div>
-                <h2 className="mb-2 font-mono text-xs font-medium uppercase tracking-wide text-sand-900">
+                <h2 className="mb-2 max-md:text-sm font-mono text-xs font-medium uppercase tracking-wide text-sand-900">
                   Timeline
                 </h2>
 
                 <div className="space-y-1.5">
                   {frontmatter.startDate && (
-                    <p>
+                    <p className="max-md:text-base">
                       Started{" "}
                       <time dateTime={frontmatter.startDate}>
                         {frontmatter.startDate}
@@ -165,7 +165,7 @@ export default async function ProjectPost({
                   )}
 
                   {frontmatter.endDate && (
-                    <p>
+                    <p className="max-md:text-base">
                       Finished{" "}
                       <time dateTime={frontmatter.endDate}>
                         {frontmatter.endDate}

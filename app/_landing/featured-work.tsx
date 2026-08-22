@@ -16,7 +16,7 @@ export default async function FeaturedWork() {
         <SectionHeading.Heading>Featured Work</SectionHeading.Heading>
       </SectionHeading>
 
-      <p className="mb-8 max-w-[68ch] text-sand-700 text-md leading-[1.7]">
+      <p className="mb-8 max-w-[68ch] text-sand-700 text-md leading-[1.7] max-xs3:text-base max-xs3:leading-[1.6]">
         A selection of projects I've built, from client work to personal
         projects and experiments.
       </p>

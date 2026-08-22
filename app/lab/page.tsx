@@ -39,7 +39,7 @@ export default async function Lab() {
 
   return (
     <main>
-      <div className="narrow-container px-4">
+      <div className="narrow-container">
         <header className="mb-16 flex items-center gap-8 md:mb-24">
           <PageHeading
             className="mt-18 mb-0 min-w-0 flex-1 max-w-none! mx-0! px-0!"
