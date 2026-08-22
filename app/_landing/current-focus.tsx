@@ -18,7 +18,7 @@ const currentFocusData = {
       <br />I want to better my output and communication in Japanese! I passed
       N3, but the plan is to become N5-N4-N3 solid in output.
     </span>,
-    "Working on my singing: focusing on the problem areas, largely psychological issues, slowly building myself for learning vocal distortions techniques.",
+    "Working on my singing: focusing on the problem areas, largely psychological issues, slowly building myself for learning vocal distortion techniques.",
   ],
   building: [
     "This website: I'll be writing content, case studies of past projects, and overall improve the website as I encounter the needs for it.",

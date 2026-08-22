@@ -6,6 +6,8 @@ import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
 import { SITE_URL } from "./_lib/seo";
 
+const METADATA_DESCRIPTION = "Rajibul Islam is a software developer exploring software engineering, singing, voice, Japanese, and creative projects — a personal space for the things he builds, learns, and wants to explore."
+
 const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
@@ -48,8 +50,7 @@ export const metadata: Metadata = {
     template: "%s — Raji ラジ",
   },
 
-  description:
-    "Rajibul Islam's personal corner of the internet — software engineering, singing, learning, experiments, writing, and everything in between.",
+  description: METADATA_DESCRIPTION,
 
   authors: [{ name: "Rajibul Islam" }],
   creator: "Rajibul Islam",
@@ -64,8 +65,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Raji ラジ",
     title: "Raji ラジ - Rajibul Islam",
-    description:
-      "Rajibul Islam's personal corner of the internet — software engineering, singing, learning, experiments, writing, and everything in between.",
+    description: METADATA_DESCRIPTION,
     locale: "en_IN",
     images: [
       {
@@ -78,8 +78,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Raji ラジ — Rajibul Islam",
-    description:
-      "Rajibul Islam's personal corner of the internet — software engineering, singing, learning, experiments, writing, and everything in between.",
+    description: METADATA_DESCRIPTION,
     images: ["/images/rajibul-islam.jpg"],
   },
 };
