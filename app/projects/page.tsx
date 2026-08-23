@@ -15,8 +15,11 @@ export default async function Projects() {
 
   return (
     <main>
-      <PageHeading paragraph="I treat my projects like stories. Behind every architectural decision, there is a problem that needed solving, constraints that forced creativity, and lessons learned the hard way.">
-        Selected Work
+      <PageHeading
+        className="mb-18"
+        paragraph="These are some of the things I've built, from client work and personal projects to smaller experiments. I'll try to explain what I was trying to do, why I built things the way I did, and what I learned along the way."
+      >
+        Projects
       </PageHeading>
 
       <div className="primary-container pb-20">
