@@ -23,7 +23,7 @@ const components: MDXComponents = {
   h2: ({ children, ...props }) => (
     <h2
       {...props}
-      className="mt-12 mb-5 border-b border-sand-200 pb-2 font-serif text-3xl leading-tight tracking-tight text-sand-900 max-md3:text-2xl max-xs3:text-xl"
+      className="mt-12 mb-5 border-b border-sand-200 pb-2 font-serif text-3xl leading-tight tracking-tight text-sand-900 max-md3:text-2xl"
     >
       {children}
     </h2>
@@ -32,7 +32,7 @@ const components: MDXComponents = {
   h3: ({ children, ...props }) => (
     <h3
       {...props}
-      className="mt-10 mb-4 font-serif text-2xl leading-tight tracking-tight text-sand-900 max-md3:text-xl max-xs3:text-lg"
+      className="mt-10 mb-4 font-serif text-2xl leading-tight tracking-tight text-sand-900 max-md3:text-xl"
     >
       {children}
     </h3>

@@ -31,7 +31,7 @@ export default function CurrentFocus() {
   return (
     <section
       id="current-focus"
-      className="bg-sand-100 mx-auto mt-12 sm:mb-26 px-10 py-12 max-sm:p-8 max-sm:py-14 border border-sand-200 rounded-lg max-w-6xl"
+      className="bg-sand-100 mx-auto mt-12 sm:mb-26 px-20 py-14 max-sm:px-8 max-sm:py-14 border border-sand-200 rounded-lg max-w-6xl"
     >
       <h2 className="mb-10 font-serif text-sand-900 text-3xl">Current Focus</h2>
 

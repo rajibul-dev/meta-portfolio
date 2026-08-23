@@ -16,7 +16,7 @@ export default function PageHeading({
   return (
     <header
       className={clsx(
-        "mt-18 primary-container",
+        "mt-18 primary-container max-xs3:mt-14",
         paragraph ? "mb-12" : "mb-10",
         className,
       )}
@@ -24,7 +24,7 @@ export default function PageHeading({
       <h1
         className={clsx(
           "font-serif text-sand-900 text-4xl md:text-5xl max-xs3:text-3xl",
-          paragraph && "mb-6",
+          paragraph && "mb-6 max-xs3:mb-4",
           hClassName,
         )}
       >
