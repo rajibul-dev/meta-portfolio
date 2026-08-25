@@ -24,7 +24,7 @@ const components: MDXComponents = {
   h2: ({ children, ...props }) => (
     <h2
       {...props}
-      className="mt-12 mb-5 border-b border-sand-200 pb-2 font-serif text-3xl leading-tight tracking-tight text-sand-900 max-md3:text-2xl mdx-h2-word-spacing"
+      className="mt-12 mb-5 border-b border-sand-200 pb-2 font-serif text-3xl leading-tight tracking-tight text-sand-900 max-md:leading-[1.3] mdx-h2-word-spacing"
     >
       {children}
     </h2>
@@ -69,7 +69,7 @@ const components: MDXComponents = {
   p: ({ children, ...props }) => (
     <p
       {...props}
-      className="mb-5 font-sans text-xl leading-[1.7] max-md3:text-lg max-xs3:text-base max-xs3:leading-[1.6] text-sand-800"
+      className="mb-5 font-sans text-xl leading-[1.7] max-md3:text-lg max-xs3:text-base max-xs3:leading-[1.7] text-sand-800"
     >
       {children}
     </p>
@@ -89,7 +89,7 @@ const components: MDXComponents = {
   ul: ({ children, ...props }) => (
     <ul
       {...props}
-      className="my-4 list-disc space-y-2 pl-6 text-xl leading-[1.7] max-md3:text-lg max-xs3:text-base max-xs3:leading-[1.6] text-sand-800 marker:text-sand-400"
+      className="my-4 list-disc space-y-2 pl-6 text-xl leading-[1.7] max-md3:text-lg max-xs3:text-base max-xs3:leading-[1.7] text-sand-800 marker:text-sand-400"
     >
       {children}
     </ul>
@@ -98,7 +98,7 @@ const components: MDXComponents = {
   ol: ({ children, ...props }) => (
     <ol
       {...props}
-      className="my-4 list-decimal space-y-2 pl-9.5 text-xl leading-[1.7] max-md3:text-lg max-xs3:text-base max-xs3:leading-[1.6] text-sand-800 marker:font-mono marker:text-sand-400"
+      className="my-4 list-decimal space-y-2 pl-9.5 text-xl leading-[1.7] max-md3:text-lg max-xs3:text-base max-xs3:leading-[1.7] text-sand-800 marker:font-mono marker:text-sand-400"
     >
       {children}
     </ol>
@@ -134,7 +134,7 @@ const components: MDXComponents = {
   blockquote: ({ children, ...props }) => (
     <blockquote
       {...props}
-      className="my-8 rounded-r-sm border-l-2 border-amber-700/50 bg-amber-700/5 pt-1 pr-5 pb-1 pl-5 font-serif text-xl leading-[1.65] italic text-sand-700 max-md3:text-lg max-xs3:pl-4 max-xs3:text-base max-xs3:leading-[1.6] md:pl-6 [&_p]:mb-0"
+      className="my-8 rounded-r-sm border-l-2 border-amber-700/50 bg-amber-700/5 pt-1 pr-5 pb-1 pl-5 font-serif text-xl leading-[1.65] italic text-sand-700 max-md3:text-lg max-xs3:pl-4 max-xs3:text-base max-xs3:leading-[1.7] md:pl-6 [&_p]:mb-0"
     >
       {children}
     </blockquote>

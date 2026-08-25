@@ -79,7 +79,7 @@ export default async function ProjectPost({
               </span>
             ))}
           </div>
-          <h1 className="font-serif text-7xl max-lg:text-6xl max-md:text-5xl max-w-[28ch] leading-tight tracking-tight text-sand-900">
+          <h1 className="font-serif text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-4xl max-sm:leading-[1.3] max-w-[28ch] leading-tight tracking-tight text-sand-900">
             {frontmatter.title}
           </h1>
           <p className="font-serif text-2xl max-md:text-xl leading-relaxed text-sand-600 max-w-[80ch]">
@@ -98,7 +98,7 @@ export default async function ProjectPost({
             />
           </figure>
         ) : (
-          <div className="mb-16 h-px bg-sand-200" />
+          <div className="mb-16 max-md:mb-10 h-px bg-sand-200" />
         )}
         {/* Project content */}
         <div className="grid grid-cols-12 max-md:grid-cols-1 gap-12">

@@ -66,7 +66,7 @@ export default async function WritingPost({
           <span>{post.readingTime} min read</span>
         </div>
 
-        <h1 className="font-serif text-6xl max-lg:text-5xl max-md:text-4xl text-sand-900 tracking-tight leading-tight mb-3">
+        <h1 className="font-serif text-6xl max-lg:text-5xl max-md:text-4xl max-md:leading-[1.3] text-sand-900 tracking-tight leading-tight mb-3">
           {post.frontmatter.title}
         </h1>
 

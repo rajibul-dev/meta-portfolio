@@ -71,7 +71,7 @@ export default async function Projects() {
                   {project.date}
                 </p>
 
-                <h2 className="mb-4 flex items-center gap-3 font-serif text-3xl text-sand-900 transition-colors group-hover:text-amber-700 max-md:mb-3">
+                <h2 className="mb-4 flex items-center gap-3 font-serif text-3xl text-sand-900 transition-colors group-hover:text-amber-700 leading-[1.35] max-md:mb-3">
                   {project.title}
 
                   <ArrowUpRight className="h-5 w-5 translate-x-1 -translate-y-1 text-amber-700 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
