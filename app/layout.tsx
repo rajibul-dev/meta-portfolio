@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { Newsreader, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 // import Provider from "./provider";
@@ -6,7 +10,8 @@ import Navbar from "./_components/navbar";
 import Footer from "./_components/footer";
 import { SITE_URL } from "./_lib/seo";
 
-const METADATA_DESCRIPTION = "Rajibul Islam is a software developer exploring software engineering, singing, voice, Japanese, and creative projects — a personal space for the things he builds, learns, and wants to explore."
+const METADATA_DESCRIPTION =
+  "Rajibul Islam is a software developer exploring software engineering, singing, voice, Japanese, and creative projects — a personal space for the things he builds, learns, and wants to explore.";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -105,6 +110,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
