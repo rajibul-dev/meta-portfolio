@@ -168,6 +168,11 @@ button {
   word-spacing: 1.2pt;
 }
 
+@utility mdx-h2-word-spacing {
+  word-spacing: 1.2pt;
+  letter-spacing: -0.2pt;
+}
+
 .standard-para {
   @apply max-md3:text-base text-lg leading-[1.7] max-xs3:leading-[1.6];
 }
@@ -183,3 +188,10 @@ button {
 .wide-container {
   @apply mx-auto px-5 max-w-full;
 }
+
+/* class .mdx-content if direct h2 first-child */
+.mdx-content > h2:first-child {
+  @apply mt-0.5;
+}
+
+/* if .mdx-content has two consecutive blockquote elements, reduce their margin-block */
