@@ -1,22 +1,138 @@
 ---
-title: "Twitch Timestamp Grabber"
-description: "A small utility for extracting useful timestamps from Twitch live streams. This another real project which would be worthy of a case study, but I haven't written it yet. This is just a placeholder for now."
-date: "2026-08-15"
+title: "From Manual Twitch Timestamps to One-Click VOD Links"
+description: "A small workflow problem for Mia turned into a tool that made sharing Twitch timestamps much easier."
+date: "2026-08-26"
 published: true
 featured: true
-startDate: "2026-04-07"
-endDate: "2026-04-11"
 tags:
-  - Case Study
-  - utility
-  - web
-  - TypeScript
+  - "Case Study"
+startDate: "2026-05-10"
+endDate: "2026-05-17"
+liveUrl: ""
+sourceUrl: "https://github.com/rajibul-dev/twitch-stream-timestamp-grabber"
 ---
 
-# Twitch Timestamp Grabber
+## Who is this for and what workflow do they have?
 
-Twitch Timestamp Grabber is a focused utility built around a simple problem: getting useful timestamps out of long video sessions without manually dealing with unnecessary friction.
+Mia and Aliki are voice / singing teachers who [stream on Twitch](https://www.twitch.tv/miavoiceteacher) (a live streaming [platform](https://www.twitch.tv/)), and they take recorded submissions from their students to give feedback. The students don't necessarily have to be present during the live stream because the recorded streams (VODs) are available, and Mia writes down the timestamps to the target students. That timestamp is not only useful for those who were not present, but also those who were present would also want to go back and review the feedback given to them.
 
-The interesting part of the project was keeping the workflow small. Instead of building a large application around the problem, the project focuses on making one repetitive task quick and straightforward.
+They might go through **10 or 20 submissions in a day**, and they had to write down the timestamps manually each time, which was a tedious task, especially when they had to analyze the reocrdings and give feedbacks which gets deep or technical, and that task-switching was not ideal, it's just annoying. Though, they were living with it, as they thought "it's fine; that's how it's done."
 
-It is the kind of project I enjoy because a small tool can sometimes be more useful than a much larger piece of software.
+## How I Started Thinking About It
+
+By the way, they didn't ask me or anyone to make a tool for this matter. Nor was I actively thinking of creating one. But I noticed how they do it, so it was in the back of my mind. Thinking of a solution came to me as a shower thought, and I was like "I can make a tool for this." Connecting the dots that how it's possible to copy YouTube timestamps, there can be a way to do it for Twitch as well.
+
+Then after showering, I messaged her before I optimize for a problem she doesn't have.
+
+> **Me**: "Mia, how do you copy your stream timestamps currently?"\
+> **Her**: "What do you mean by copy? I type the timestamps manually every time."
+
+And I was at least thinking she maybe selects and copies the timestamps, which still felt like a friction I'd want to optimize for; but after hearing that she types them manually, I was sure **this project is worth it**.
+
+> **Me**: "Oh, I'll make it convenient for you."\
+> **Her**: "What do you mean?"\
+> **Me**: "I'll make a terminal utility that'll copy your stream timestamp into your clipboard when you need it to. Very simple."
+
+Well it doesn't sound simple to someone who doesn't use terminal utilities, or even if they've used it before, they don't know that it's called "terminal utility". So it's understandable she found it more complicated than it helping her. But I was confident that I can make it **simple enough for her and anyone else to use**. And it may sound ironic, this is exactly why I chose it to be a terminal utility, for making it super simple and super easy to use.
+
+## Why did I choose a terminal utility?
+
+First of all, I can't be bothered by creating a GUI for this, and I don't want to.\
+It needs to be **lightweight** and **fast**, so that it doesn't feel like a burden to even launch it.
+
+I even wanted to remove precision-based mouse clicking. I deliberately made it so that **pressing any key on the keyboard is enough to copy the timestamp**, which is much more convenient and UX-friendly in this case.
+
+I was learning C# at the time, I'll get to practice it, it has a dedicated way to make console applications; Mia uses Windows; I don't want her to install any runtime or anything, so I made it a **self-contained executable** (.exe), for which C# was a perfect fit. She doesn't have to install .NET runtime or anything, just download the executable and run it.
+
+## How I made it
+
+There's sure to be an API for Twitch, so I researched and found [Helix API](https://twitch4j.github.io/rest-helix/), which is the official Twitch's REST API (currently in 2026). From where I can query for a twitch channel with its `channel_name`:
+
+```http
+GET https://api.twitch.tv/helix/streams?user_login=miavoiceteacher
+Client-ID: <my-client-id>
+Authorization: Bearer <access-token>
+```
+
+and get this in return:
+
+```json
+{
+  "data": [
+    {
+      "id": "123456789",
+      "user_id": "987654321",
+      "user_login": "miavoiceteacher",
+      "type": "live",
+      "started_at": "2026-08-25T14:30:00Z"
+    }
+  ],
+  "pagination": {}
+}
+```
+
+The `"started_at": "2026-08-25T14:30:00Z"` is the UTC timestamp of when the stream started, and I can subtract that from the current UTC timestamp of "right now", as in when Mia presses her key to request for the timestamp, and we can get the difference in seconds, which is the timestamp of the stream. Then I can format it into a human readable format like `hh:mm:ss`. Well, we expand it into the V2 where we cook the timestamp into a VOD link, that section is coming up below.
+
+## Mia and Aliki's reaction to the tool
+
+<Video
+  src="/videos/timestamp-tool-day-1-reaction.mp4"
+  title="Mia using Twitch Timestamp Grabber for the first time and her reaction"
+/>
+
+I was very happy to see thier reaction, and as you saw, they were very happy to see the tool working. It greatly impacted their productivity.
+
+## The V2 of the tool with VOD Timestamped Links
+
+Mia is great at giving feedback and coming up with project ideas, and she came up with a great idea to make the tool **significantly better**:
+
+<Video
+  src="/videos/timestamp-tool-asking-for-V2.mp4"
+  title="Mia asking if timestamped VOD link capability is possible"
+/>
+
+And she was right about it being a bit hard. I researched and found out that twitch timestamp links' building blocks are `vod_id` and `timestamp`. We currently have the `timestamp`, but we need to get the `vod_id` to cook the timestamped link with it.
+
+The desired link structure is:
+
+```
+https://www.twitch.tv/videos/[vod_id]?t=[timestamp]
+```
+
+The first request does not give us a `vod_id`, but it gave us a few stuff, among them was the `user_id`; and after some research I found out we can use that `user_id` to fetch the `vod_id`. For that, I have to make another `GET` request to the Helix API on its `/videos` endpoint.
+
+```http
+GET https://api.twitch.tv/helix/videos?user_id=[my_user_id]&type=archive&first=1
+
+Client-ID: <my-client-id>
+Authorization: Bearer <access-token>
+```
+
+Then the response looked something like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "123456789",
+      "user_id": "987654321",
+      "user_login": "miavoiceteacher"
+    }
+  ],
+  "pagination": {}
+}
+```
+
+This `id` is the VOD ID, which is the missing piece.
+
+We have all the pieces, but we just need to make timestamp format be like `1h2m3s` instead of `hh:mm:ss`. That's simple with a bit of string manipulation, and we have the raw seconds, so, some programming acrobatics gave us the desired format. And that is all! Below is an actual timestamped VOD link:
+
+> [https://www.twitch.tv/videos/2773647943?t=0h36m5s](https://www.twitch.tv/videos/2773647943?t=0h36m5s)
+
+## What I learned from this project
+
+The biggest thing I took away from this project was that small workflow problems can be worth solving even when nobody has explicitly asked for a solution. I noticed a little bit of friction, thought about it, checked that it was actually real, and built something small enough to test quickly.
+
+I also learned that making something technically simple and making it feel simple to the person using it are not always the same thing. Choosing a terminal utility was a technical decision, but the real goal was to make grabbing a timestamp require almost no thought.
+
+And finally, the V2 reinforced something I really like about building software: sometimes the best feature ideas come from actually putting something in front of someone and listening to what they ask for next.

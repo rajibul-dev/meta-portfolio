@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import type { MDXComponents } from "mdx/types.js";
 import Image from "next/image";
 import { Code } from "bright";
+import Video from "./video";
 
 Code.theme = "material-default";
 Code.lineNumbers = false;
@@ -23,7 +24,7 @@ const components: MDXComponents = {
   h2: ({ children, ...props }) => (
     <h2
       {...props}
-      className="mt-12 mb-5 border-b border-sand-200 pb-2 font-serif text-3xl leading-tight tracking-tight text-sand-900 max-md3:text-2xl"
+      className="mt-12 mb-5 border-b border-sand-200 pb-2 font-serif text-3xl leading-tight tracking-tight text-sand-900 max-md3:text-2xl mdx-h2-word-spacing"
     >
       {children}
     </h2>
@@ -77,7 +78,7 @@ const components: MDXComponents = {
   a: ({ children, ...props }) => (
     <a
       {...props}
-      className="font-medium text-sand-600 underline decoration-sand-300 underline-offset-6 transition-colors hover:text-amber-700 hover:decoration-amber-700/50"
+      className="font-medium text-sand-700 underline decoration-sand-300 underline-offset-6 transition-colors hover:text-amber-700 hover:decoration-amber-700/50"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -151,7 +152,7 @@ const components: MDXComponents = {
   pre: (props) => (
     <Code
       {...props}
-      className="min-w-0 max-w-full overflow-x-auto text-[1.0625rem]! max-md3:text-base! max-xs3:text-[0.9375rem]! leading-relaxed"
+      className="min-w-0 max-w-full overflow-x-auto text-[1.0625rem]! max-md3:text-base! max-xs3:text-sm! leading-relaxed"
     />
   ),
 
@@ -198,6 +199,7 @@ const components: MDXComponents = {
       {children}
     </td>
   ),
+  Video,
 };
 
 export default function MDXContent({ source }: MDXContentProps) {
