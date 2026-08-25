@@ -10,7 +10,7 @@ export default function Video({
       controls
       title={title}
       preload="metadata"
-      className="my-8 w-full rounded-sm border border-sand-200"
+      className="my-8 w-full"
     >
       <source
         src={src}
