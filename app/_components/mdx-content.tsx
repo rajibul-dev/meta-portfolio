@@ -152,7 +152,7 @@ const components: MDXComponents = {
   pre: (props) => (
     <Code
       {...props}
-      className="min-w-0 max-w-full overflow-x-auto text-[1.0625rem]! max-md3:text-base! max-xs3:text-sm! leading-relaxed"
+      className="min-w-0 max-w-full overflow-x-auto text-[1.0625rem]! max-md3:text-base! max-xs3:text-sm! mb-5! leading-relaxed"
     />
   ),
 
