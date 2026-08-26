@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "/favicon.ico" },
+      { url: "/icon.svg" },
       {
         url: "/favicon-16x16.png",
         type: "image/png",
