@@ -1,21 +1,12 @@
-export default function Video({
-  src,
-  title = undefined,
-}: {
-  src: string;
-  title?: string;
-}) {
+import NextVideo from "next-video";
+import { videos, type VideoKey } from "@/app/_lib/videos";
+
+export default function Video({ id, title }: { id: VideoKey; title?: string }) {
   return (
-    <video
-      controls
+    <NextVideo
+      src={videos[id]}
       title={title}
-      preload="metadata"
       className="my-8 w-full"
-    >
-      <source
-        src={src}
-        type="video/mp4"
-      />
-    </video>
+    />
   );
 }
