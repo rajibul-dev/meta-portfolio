@@ -4,7 +4,6 @@ import MDXContent from "@/app/_components/mdx-content";
 import LabEntry from "@/app/_components/lab/lab-entry";
 import PageHeading from "@/app/_components/ui/page-heading";
 import { getCollection, getContent } from "@/app/_lib/content";
-import EmptyState from "@/app/_components/ui/empty-state";
 import Button from "../_components/ui/button";
 
 function getPreviewSource(content: string) {
