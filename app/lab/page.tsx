@@ -4,6 +4,8 @@ import MDXContent from "@/app/_components/mdx-content";
 import LabEntry from "@/app/_components/lab/lab-entry";
 import PageHeading from "@/app/_components/ui/page-heading";
 import { getCollection, getContent } from "@/app/_lib/content";
+import EmptyState from "@/app/_components/ui/empty-state";
+import Button from "../_components/ui/button";
 
 function getPreviewSource(content: string) {
   const blocks = content
@@ -61,35 +63,52 @@ export default async function Lab() {
           </div>
         </header>
 
-        <div className="relative ml-4 max-w-3xl space-y-12 border-l border-sand-300 pb-12 md:ml-6">
-          {entries.map(({ log, post, previewSource }) => {
-            const hasMore = post.wordCount > 45;
+        {entries.length === 0 ? (
+          <div className="pb-20">
+            <div className="border-t border-sand-200 py-12 max-xs3:py-10">
+              <h2 className="mb-3 font-serif text-3xl text-sand-900 max-md3:text-2xl">
+                Nothing here yet.
+              </h2>
 
-            return (
-              <LabEntry
-                key={log.slug}
-                slug={log.slug}
-                date={log.date}
-                labType={log.labType}
-                permalink={log.permalink}
-                hasMore={hasMore}
-                preview={
-                  previewSource ? <MDXContent source={previewSource} /> : null
-                }
-              >
-                <MDXContent source={post.content} />
-              </LabEntry>
-            );
-          })}
+              <p className="mb-7 max-w-2xl text-lg leading-[1.7] text-sand-700 max-md3:text-base max-xs3:leading-[1.6]">
+                The lab is empty for now. That's okay; it'll fill up as I
+                experiment, learn, and make things.
+              </p>
 
-          <div className="relative pl-8 md:pl-12">
-            <div className="absolute -left-1.25 top-1.5 h-2 w-2 rounded-full bg-sand-300" />
-
-            <p className="font-mono text-sm italic text-sand-400">
-              End of current logs...
-            </p>
+              <Button href="/">Back to home →</Button>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="relative ml-4 max-w-3xl space-y-12 border-l border-sand-300 pb-12 md:ml-6">
+            {entries.map(({ log, post, previewSource }) => {
+              const hasMore = post.wordCount > 45;
+
+              return (
+                <LabEntry
+                  key={log.slug}
+                  slug={log.slug}
+                  date={log.date}
+                  labType={log.labType}
+                  permalink={log.permalink}
+                  hasMore={hasMore}
+                  preview={
+                    previewSource ? <MDXContent source={previewSource} /> : null
+                  }
+                >
+                  <MDXContent source={post.content} />
+                </LabEntry>
+              );
+            })}
+
+            <div className="relative pl-8 md:pl-12">
+              <div className="absolute -left-1.25 top-1.5 h-2 w-2 rounded-full bg-sand-300" />
+
+              <p className="font-mono text-sm italic text-sand-400">
+                End of current logs...
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );

@@ -22,14 +22,21 @@ export default async function FeaturedWork() {
       </p>
 
       <div className="flex flex-col gap-3 mb-9">
-        {projects.map((project) => (
-          <WorkListItem
-            title={project.title || "Untitled Project"}
-            href={`/projects/${project.slug}`}
-            category={project.tags?.[0] ?? "Case Study"}
-            key={project.slug}
-          />
-        ))}
+        {projects.length > 0 ? (
+          projects.map((project) => (
+            <WorkListItem
+              title={project.title || "Untitled Project"}
+              href={`/projects/${project.slug}`}
+              category={project.tags?.[0] ?? "Case Study"}
+              key={project.slug}
+            />
+          ))
+        ) : (
+          <p className="max-w-2xl text-lg leading-[1.7] text-sand-700 max-md3:text-base max-xs3:leading-[1.6]">
+            I'm still building things worth putting here. Check back when
+            there's something to share.
+          </p>
+        )}
       </div>
       <Button href="/projects">Explore All Projects &rarr;</Button>
 

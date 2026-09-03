@@ -19,7 +19,17 @@ function getCollectionPath(type: ContentType) {
 export async function getCollection(type: ContentType): Promise<ContentItem[]> {
   const directory = getCollectionPath(type);
 
-  const fileNames = await fs.readdir(directory);
+  let fileNames: string[];
+
+  try {
+    fileNames = await fs.readdir(directory);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
 
   const items: ContentItem[] = [];
 
@@ -34,7 +44,6 @@ export async function getCollection(type: ContentType): Promise<ContentItem[]> {
     const frontmatter = data as ContentFrontmatter;
     const { readingTime, wordCount } = getReadingStats(content);
 
-    // Skip unpublished content
     if (data.published === false) continue;
 
     items.push({
