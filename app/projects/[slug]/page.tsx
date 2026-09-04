@@ -116,7 +116,7 @@ export default async function ProjectPost({
                         href={frontmatter.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group max-md:text-base flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:text-sand-900"
+                        className="group max-md:text-base flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:underline underline-offset-4"
                       >
                         Live project
                         <ExternalLink
@@ -130,7 +130,7 @@ export default async function ProjectPost({
                         href={frontmatter.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group max-md:text-base flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:text-sand-900"
+                        className="group max-md:text-base flex items-center gap-1.5 font-medium text-amber-700 transition-colors hover:underline underline-offset-4"
                       >
                         Source code
                         <ExternalLink

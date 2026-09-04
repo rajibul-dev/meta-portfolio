@@ -23,7 +23,7 @@ export default function Footer() {
             <a
               key={link.name}
               href={link.href}
-              className="hover:text-sand-900 transition-colors"
+              className="hover:text-amber-700 hover:underline hover:decoration-amber-700 underline-offset-4 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >

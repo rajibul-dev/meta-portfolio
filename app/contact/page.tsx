@@ -41,7 +41,7 @@ export default function Contact() {
         </h2>
         <a
           href="mailto:hello@rajidev.com"
-          className="max-md:text-2xl text-3xl font-serif text-sand-900 hover:text-sand-600 transition-colors underline decoration-sand-300 underline-offset-8 block text-center"
+          className="max-md:text-2xl text-3xl font-serif text-sand-900 hover:text-amber-700 hover:decoration-amber-700 transition-colors underline decoration-sand-300 underline-offset-8 block text-center"
         >
           hello@rajidev.com
         </a>
@@ -58,7 +58,7 @@ export default function Contact() {
             </h2>
             <a
               href={contact.href}
-              className="text-lg font-medium text-sand-800 hover:text-sand-500 transition-colors text-center hover:underline decoration-sand-300 underline-offset-4"
+              className="text-lg font-medium text-sand-800 hover:text-amber-700 transition-colors text-center hover:underline decoration-sand-300 underline-offset-6 hover:decoration-amber-700"
               target="_blank"
               rel="noopener noreferrer"
             >
