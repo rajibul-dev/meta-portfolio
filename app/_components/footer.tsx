@@ -11,6 +11,10 @@ const footerLinks = [
     name: "Instagram",
     href: "https://www.instagram.com/rajibulislam201",
   },
+  {
+    name: "Discord",
+    href: "https://discordapp.com/users/463152265692315658",
+  },
 ];
 
 export default function Footer() {

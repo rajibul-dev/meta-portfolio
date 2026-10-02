@@ -17,6 +17,11 @@ const contactsAfterEmail = [
     href: "https://www.linkedin.com/in/rajibul-dev",
     text: "linkedin.com/in/rajibul-dev/",
   },
+  {
+    title: "Discord",
+    href: "https://discordapp.com/users/463152265692315658",
+    text: "discord profile raji201",
+  },
 ];
 
 export const metadata: Metadata = {
