@@ -1,35 +1,10 @@
 "use client";
 
-import {
-  ArrowRight,
-  BookOpen,
-  ChevronDown,
-  ChevronUp,
-  Code,
-  FileText,
-  Music,
-} from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-
-type LabType = "music" | "code" | "reading" | "note";
-
-const icons = {
-  music: Music,
-  code: Code,
-  reading: BookOpen,
-  note: FileText,
-} satisfies Record<LabType, typeof Music>;
-
-type LabEntryProps = {
-  slug: string;
-  date: string;
-  labType?: LabType;
-  permalink?: boolean;
-  hasMore: boolean;
-  preview: React.ReactNode;
-  children: React.ReactNode;
-};
+import type { LabEntryProps } from "./lab-contents";
+import { labIcons } from "./lab-contents";
 
 export default function LabEntry({
   slug,
@@ -42,7 +17,7 @@ export default function LabEntry({
 }: LabEntryProps) {
   const [expanded, setExpanded] = useState(false);
 
-  const Icon = icons[labType];
+  const Icon = labIcons[labType];
 
   return (
     <article className="relative pl-8 md:pl-12">

@@ -2,25 +2,12 @@ import MDXContent from "@/app/_components/mdx-content";
 import { getContent } from "@/app/_lib/content";
 import { buildContentMetadata } from "@/app/_lib/seo";
 import type { Metadata } from "next";
-import { ArrowLeft, BookOpen, Code, FileText, Music } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-type LabType = "music" | "code" | "reading" | "note";
-
-const icons = {
-  music: Music,
-  code: Code,
-  reading: BookOpen,
-  note: FileText,
-} satisfies Record<LabType, typeof Music>;
-
-const labels: Record<LabType, string> = {
-  music: "Music",
-  code: "Code",
-  reading: "Reading",
-  note: "Note",
-};
+import type { LabType } from "@/app/_components/lab/lab-contents";
+import { labIcons, labels } from "@/app/_components/lab/lab-contents";
 
 export async function generateMetadata({
   params,
@@ -35,7 +22,7 @@ export async function generateMetadata({
     const label = labels[labType];
 
     return buildContentMetadata({
-      title: `Lab Note: ${label}`,
+      title: `About ${label}`,
       description: post.frontmatter.description,
       content: post.content,
       path: `/lab/${slug}`,
@@ -64,7 +51,7 @@ export default async function LabPost({
   }
 
   const labType: LabType = post.frontmatter.labType ?? "note";
-  const Icon = icons[labType];
+  const Icon = labIcons[labType];
   const label = labels[labType];
 
   return (
@@ -90,7 +77,7 @@ export default async function LabPost({
         </div>
 
         <h1 className="font-serif text-5xl leading-tight tracking-tight text-sand-900 max-md:text-4xl max-md:leading-[1.3]">
-          Lab Note: {label}
+          {label}
         </h1>
       </header>
 

@@ -200,6 +200,7 @@ const components: MDXComponents = {
     </td>
   ),
   Video,
+  Image,
 };
 
 export default function MDXContent({ source }: MDXContentProps) {
