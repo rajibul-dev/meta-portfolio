@@ -1,28 +1,35 @@
-import ExternalLinkInline from "../_components/ui/external-link-inline";
+// import ExternalLinkInline from "../_components/ui/external-link-inline";
 
 const currentFocusData = {
   learning: [
-    "UNIX/Linux for system-level programming, shell scripting, general computing, improving work efficiency, and for building advanced backend applications.",
-    <span key="nodejs">
-      Node.js in-depth. Learning with the{" "}
-      <ExternalLinkInline href="https://nodejs.org/docs/latest/api/">
-        official docs
-      </ExternalLinkInline>
-      , other resources, and experimentation. I'm deliberately doing this
-      without npm packages.
+    <span key="cloud">
+      Learning Cloud (AWS, Cloudflare, Azure, GCP), DevOps, Systems Engineering
+      and Linux deeply. To be able to <strong>deploy anything</strong>, and with
+      much less cost (even zero-cost solutions) where a modern PaaS would charge
+      more. It's a really powerful capability! My background in full-stack and
+      the recent deeper backend focus gives me a solid foundation for it. I'll
+      be looking for <strong>DevOps and Cloud Engineering</strong>{" "}
+      opportunities, so preparing for that!
     </span>,
-    "C# and .NET for web, game dev, console-based utilities, and more.",
-    "Godot Engine for game development.",
+    "Learning/understanding Cryptography in better depth. To become better equipped with security, to become more aware of how the software and digital things we use implement security. And identifying vulnerabilities and building more secure systems.",
+    "Exploring UNIX tools, shell scripting, and composable command-line utilities for building capable backend applications.",
+    <span key="webrtc">
+      Planning to learn <strong>WebRTC and Mediasoup</strong> because audio and
+      video streaming applications interest me. I'd love to build my own video
+      calling solution that can potentially offer a better experience for online
+      voice and singing education.
+    </span>,
+    "Game development with C#/.NET, Godot, and Unity. I also plan to learn Blender for 3D modeling.",
     <span key="japanese">
       Japanese Language (日本語)
-      <br />I want to better my output and communication in Japanese! I passed
-      N3, but the plan is to become N5-N4-N3 solid in output.
+      <br />I want to improve my input and output in Japanese! I keep expanding
+      my vocabulary, practicing them in output, learning through immersion,
+      slowly getting my brain to start thinking in Japanese!
     </span>,
-    "Working on my singing: focusing on the problem areas, largely psychological issues, slowly building myself for learning vocal distortion techniques.",
+    "Working on my singing: focusing on the problem areas, largely psychological issues. Bettering my foundation, clean singing, and then slowly building myself for the types of distortion techniques I want to be able to do.",
   ],
   building: [
     "This website: I'll be writing content, case studies of past projects, and overall improve the website as I encounter the needs for it.",
-    "Learning UNIX and Node.js in-depth is going to unlock a lot of possibilities of application ideas. Will see if I can build something useful and interesting with it.",
     "Making a 2D platformer game — but wait... This is not a serious game project. It's for learning. I do want to make it entertaining and fun, but no promises. I won't be investing too much time into it, like a serious game would. It's either going to be with Godot or Unity. No promises on the timeline, think of it as me genuinely trying to learn by setting an exciting goal; you can expect it to take years.",
   ],
 };
